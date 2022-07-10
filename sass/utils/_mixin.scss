@@ -1,0 +1,48 @@
+@mixin font ($fs, $fw, $lh) {
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: $lh;
+}
+  @mixin transition-one($property) {
+      transition: $property 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @mixin transition-two($first-property, $second-property) {
+      transition: $first-property 250ms cubic-bezier(0.4, 0, 0.2, 1), $second-property 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @mixin transition-three($first-property, $second-property, $third-property) {
+      transition: $first-property 250ms cubic-bezier(0.4, 0, 0.2, 1), $second-property 250ms cubic-bezier(0.4, 0, 0.2, 1), $third-property 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  @mixin flex ($ds:flex, $ai:center, $jc:center) {
+      display: $ds;
+      align-items: $ai;
+      justify-content: $jc;
+  }
+  
+  @mixin mobile {
+      @media screen and (min-width: 480px) {
+          @content;
+      }
+  }
+
+  @mixin tablet {
+      @media screen and (min-width: 768px) {
+          @content;
+      }
+  }
+
+  @mixin desktop {
+      @media screen and (min-width: 1200px) {
+          @content;
+      }
+  }
+
+  @mixin retina {
+      @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+          @content;
+      }
+  }

@@ -1,0 +1,29 @@
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    // margin-left: calc(-1 * var(--portfolio-set));
+    // margin-top: calc(-1 * var(--portfolio-set));
+}
+
+.gallery__item {
+    // flex-basis: calc(100%/3 - var(--portfolio-set));
+    // margin-left: var(--portfolio-set);
+    // margin-top: var(--portfolio-set);
+    background-color: var(--header-background-color);
+    @include transition-one(background-color);
+        width: 100%;
+
+    @mixin mobile {
+        margin-bottom: 30px;
+    }
+    
+    @include tablet {
+        width: calc((100% - 30px) / 2);
+    }
+
+    @include desktop {
+        width: calc((100% - 60px) / 3);
+    }
+
+}

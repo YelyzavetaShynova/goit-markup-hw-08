@@ -1,0 +1,66 @@
+.newsletter{
+    
+    @include desktop{
+        margin-left: 93px;
+    }
+}
+
+
+.newsletter__caption {
+    margin-bottom: 20px;
+    color: var(--light-text-color);
+    @include desktop{
+        text-align: left;
+    }
+}
+
+.newsletter__form {
+    @include desktop {
+    display: flex;}
+}
+
+.newsletter__input {
+    width: 450px;
+    height: 50px;
+    padding-left: 16px;
+    margin-bottom: 20px;
+    
+    @include font (16px, null, 1.25);
+    letter-spacing: var(--main-letter-spacing);
+
+    color: rgba(255, 255, 255, 0.6);
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    outline: none;
+    @include transition-one(border-color);
+
+    @include desktop {
+        width: 358px;
+        margin-right: 12px;
+        margin-bottom: 0;
+        
+    }
+
+    &:focus {
+        border-color: var(--accent-color);
+    }
+
+    &::placeholder {
+        color: var(--contact-text-color);
+        @include font (16px, null, 1.25);
+        letter-spacing: var(--main-letter-spacing);
+    }
+}
+
+.newsletter__btn {
+    padding: 10px 29px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.newsletter__icon {
+    fill: currentColor;
+    margin-left: 10px;
+}
