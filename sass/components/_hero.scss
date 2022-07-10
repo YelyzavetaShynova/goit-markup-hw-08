@@ -5,7 +5,8 @@
     background-image:
         linear-gradient(to right, rgba(47, 48, 58, 0.4),
             rgba(47, 48, 58, 0.4)),
-        url(../images/Header-phoneimg.jpg);
+        url(/);
+        url(../images/header-phoneimg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -18,18 +19,18 @@
     @include retina {
         background-image: linear-gradient(rgba(25, 28, 38, 0.2),
                 rgba(25, 28, 38, 0.2)),
-            url(../images/Header-phoneimg@2x.jpg);
+            url(../images/header-phoneimg@2x.jpg);
     }
 
     @include tablet {
         background-image: linear-gradient(rgba(25, 28, 38, 0.2),
                 rgba(25, 28, 38, 0.2)),
-            url(../images/Header-tabletimg.jpg);
+            url(../images/header-tabletimg.jpg);
 
     @include retina {
         background-image: linear-gradient(rgba(47, 48, 58, 0.4),
                         rgba(47, 48, 58, 0.4)),
-                url(../images/Header-tabletimg@2x.jpg);
+                url(../images/header-tabletimg@2x.jpg);
         }
     }
 
@@ -40,12 +41,12 @@
         max-width: 1600px;
         background-image: linear-gradient(rgba(47, 48, 58, 0.4),
                     rgba(47, 48, 58, 0.4)),
-                url(../images/header-desctopImg.jpg);
+                url(../images/header-desctopimg.jpg);
 
     @include retina {
         background-image: linear-gradient(rgba(47, 48, 58, 0.4),
                     rgba(47, 48, 58, 0.4)),
-                url(../images/header-desctopImg@2x.jpg);
+                url(../images/header-desctopimg@2x.jpg);
         }
     }
 }
