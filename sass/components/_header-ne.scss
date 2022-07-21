@@ -1,37 +1,27 @@
 .header {
     background-color: var(--header-background-color);
     border-bottom: 1px solid #ececec;
-    @include font (14px, 500, 1.14);
+    // @include font (14px, 500, 1.14);
     letter-spacing: var(--second-letter-spacing);
 }
 
 .header__container {
     display: flex;
     align-items: center;
-
-    @include mobile {
-        width: 480px;
+    @include tablet {
         justify-content: space-between;
     }
-
-    @include tablet {
-        width: 768px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    @include desktop {
-        width: 1200px;
-        margin: 0 auto;
-    }
+    
+    // display: flex;
+    // align-items: center;
+    // justify-content: space-between;
 }
 
 .nav {
-    // @include flex();
-    display: flex;
-    align-items: center;
+    @include tablet{
+        @include flex();
+    } 
 }
-
 
 .nav__list {
     display: none;
@@ -42,31 +32,25 @@
         margin-left: 88px;
         margin-right: 84px;
     }
-
-    @include desktop{
+    
+    @include desktop {
         margin-left: 93px;
     }
-    
 }
-.nav__item{
-    @include tablet {
-        padding-top: 32px;
-        padding-bottom: 32px;}
-    @include desktop{
-        padding-top: 32px;
-        padding-bottom: 32px;
-    }
-}
+
 .nav__item:not(:last-child) {
     margin-right: 50px;
 }
 
 .nav__link {
     display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
     color: var(--main-text-color);
     @include font (14px, 500, 1.14);
     letter-spacing: var(--second-letter-spacing);
     @include transition-one(color);
+
 
     &:hover,
     &:focus {
@@ -74,10 +58,14 @@
     }
 }
 
+.nav__list .current {
+    position: relative;
+    color: var(--accent-color);
+}
+
 .current::after {
     content: '';
     position: absolute;
-    top: 47px;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -86,23 +74,15 @@
     background-color: var(--accent-color);
 }
 
-.nav__list .current {
-    position: relative;
-    color: var(--accent-color);
-}
-
 .contacts {
     display: none;
-    margin-left: auto;
-
-    @media screen and (min-width: 768px) {
-        display: block;}
-
+    // margin-left: auto;
     @include tablet {
         display: flex;
         flex-wrap: wrap;
         padding-top: 21px;
         padding-bottom: 20px;
+      
     }
 
     @include desktop {
@@ -110,66 +90,75 @@
         margin-left: auto;
         padding-top: 32px;
         padding-bottom: 32px;
+     
     }
 }
-.contacts-item{
-    @include desktop {
-        padding-top: 32px;
-        padding-bottom: 32px;
-    }
 
-}
 .contacts__item:not(:last-child) {
-    margin-right: 30px;
+    
     @media screen and (min-width: 768px) and (max-width: 1199px) {
         margin-bottom: 10px;
+    }
+    @include desktop {
+        margin-right: 30px;
     }
 }
 
 .contacts__icon {
-    margin-right: 10px;
+    margin-right: 8px;
     fill: currentColor;
     padding: 0;
-   
+
+    @include desktop {
+        margin-right: 10px;
+    }
+    
 }
 
 .contacts__link {
-    @include tablet {
-        display: flex;
-        align-items: center;
-        @include font (12px, 500, 1.14);
-        letter-spacing: 0.02em;
-        
-        color: var(--second-text-color);
-        @include transition-one(color);}
+    @include flex();
     
-        @include desktop {
-            font-size: 14px;
-        }
+    color: var(--second-text-color);
+    @include transition-one(color);
+    @include tablet {
+        @include font (12px, 500, 1.17);
+    }
+
+    @include desktop {
+        @include font (14px, 500, 1.14);
+    }
 
     &:hover,
     &:focus {
-        color: var(--accent-color);
+         color: var(--accent-color);
     }
 }
 
+
 .header__open{
-    border: transparent;
+    position: relative;
+    width: 40px;
+    height: 40px;
+    margin-left: auto;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    
     @include tablet {
-            display: none;
-        }
+        display: none;
+    }
+
     @include desktop {
         display: none;
     }
 }
 
 .header__open-btn{
-    background-color: var(--header-background-color);
-    padding: 0;
-    line-height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0px;
     cursor: pointer;
     fill: var(--main-text-color);
-    @include transition-one(fill);
 
     &:hover,
     &:focus {
