@@ -135,7 +135,7 @@
 }
 
 
-.header__open{
+.header__open, .mob-menu__close{
     position: relative;
     width: 40px;
     height: 40px;
@@ -152,7 +152,7 @@
     }
 }
 
-.header__open-btn{
+.header__open-btn, .mob-menu__close-btn{
     position: absolute;
     top: 0;
     left: 0;
@@ -160,7 +160,7 @@
     cursor: pointer;
     fill: var(--main-text-color);
 
-    &:hover,
+
     &:focus {
         fill: var(--accent-color);
     }

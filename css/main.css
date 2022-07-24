@@ -166,6 +166,7 @@ a {
 }
 
 .mob-menu {
+  display: block;
   position: fixed;
   top: 0;
   left: 0;
@@ -173,40 +174,22 @@ a {
   height: 100vh;
   background-color: #FFFFFF;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08), 0px 1px 3px rgba(0, 0, 0, 0.16);
-  pointer-events: none;
   z-index: 1;
+  padding: 48px 40px;
 }
 
-.mobile-menu__container {
+.mob-menu__container {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: relative;
-  padding: 48px 40px;
   overflow-y: auto;
 }
 
 .mob-menu__close {
-  position: absolute;
-  padding: 0;
-  line-height: 0;
-  top: 10px;
-  right: 15px;
-  border: none;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.mob-menu__close-btn {
-  background-color: transparent;
-  padding: 0;
-  line-height: 0;
-  cursor: pointer;
-  fill: var(--main-text-color);
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.mob-menu__close-btn:hover, .mob-menu__close-btn:focus {
-  fill: var(--accent-color);
+  display: block;
+  margin-bottom: 8px;
 }
 
 .mob-menu__item:not(:last-child) {
@@ -214,6 +197,7 @@ a {
 }
 
 .mob-menu__link {
+  display: block;
   font-size: 40px;
   font-weight: 500;
   line-height: 1.7;
@@ -221,7 +205,7 @@ a {
   color: var(--main-text-color);
 }
 
-.mob-menu__item > .mob-menu__link.menu__link--current {
+.mob-menu__link.mob-current {
   color: var(--accent-color);
 }
 
@@ -416,7 +400,7 @@ a {
   color: var(--accent-color);
 }
 
-.header__open {
+.header__open, .mob-menu__close {
   position: relative;
   width: 40px;
   height: 40px;
@@ -425,17 +409,17 @@ a {
   background-color: rgba(0, 0, 0, 0);
 }
 @media screen and (min-width: 768px) {
-  .header__open {
+  .header__open, .mob-menu__close {
     display: none;
   }
 }
 @media screen and (min-width: 1200px) {
-  .header__open {
+  .header__open, .mob-menu__close {
     display: none;
   }
 }
 
-.header__open-btn {
+.header__open-btn, .mob-menu__close-btn {
   position: absolute;
   top: 0;
   left: 0;
@@ -443,7 +427,7 @@ a {
   cursor: pointer;
   fill: var(--main-text-color);
 }
-.header__open-btn:hover, .header__open-btn:focus {
+.header__open-btn:focus, .mob-menu__close-btn:focus {
   fill: var(--accent-color);
 }
 
